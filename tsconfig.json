@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "es2020",
+    "declaration": true,
+    "jsx": "preserve",
+    "lib": [
+      "DOM",
+      "ES2020"
+    ],
+    "target": "ES2018",
+    "skipLibCheck": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "sourceMap": false,
+    "moduleResolution": "node",
+    "newLine": "lf",
+    "noEmitOnError": true,
+    "noImplicitAny": false,
+    "resolveJsonModule": true,
+    "declarationMap": false,
+    "paths": {
+      "~/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
