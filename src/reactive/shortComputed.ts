@@ -6,10 +6,36 @@ import type {
 } from 'vue'
 import { isFunction } from '../utils'
 
+/**
+ * Shorthand for `computed.value`
+ * ```ts
+ * const bar = ref('bar')
+ * const foo = shortComputed<string>(() => bar.value + ' foo')
+ * foo() // 'bar foo'
+ * ```
+ */
 export function shortComputed<T>(
   getter: ComputedGetter<T>,
   debuggerOptions?: DebuggerOptions
 ): () => T
+/**
+ * Shorthand for `computed.value`
+ * ```ts
+ * const bar = ref(1)
+ * const foo = shortComputed<string>({
+ *   get() {
+ *     return bar.value + 1
+ *   }
+ *   set(val) {
+ *     bar.value = val - 1
+ *   }
+ * })
+ * foo() // 2
+ * foo.set(3)
+ * bar.value // 2
+ * foo() // 3
+ * ```
+ */
 export function shortComputed<T>(
   options: WritableComputedOptions<T>,
   debuggerOptions?: DebuggerOptions
