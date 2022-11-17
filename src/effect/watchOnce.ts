@@ -2,6 +2,15 @@ import type { WatchCallback, WatchOptions, WatchSource } from 'vue'
 import { nextTick, watch } from 'vue'
 import type { MapOldSources, MapSources } from '../types'
 
+/**
+ * `watch` that only triggers once.
+ * ```ts
+ * watchOnce(source, (v) => {
+ *   // triggers only once
+ *   console.log(v)
+ * })
+ * ```
+ */
 export function watchOnce<
   T extends Readonly<WatchSource<unknown>[]>,
   Immediate extends Readonly<boolean> = false
