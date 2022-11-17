@@ -1,5 +1,10 @@
 import type { WatchSource } from 'vue'
 
+/**
+ * any function
+ */
+export type Fn = () => void
+
 export type MapSources<T> = {
   [K in keyof T]: T[K] extends WatchSource<infer V> ? V : never
 }
